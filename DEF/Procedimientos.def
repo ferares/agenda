@@ -1,0 +1,76 @@
+DEFINITION MODULE Procedimientos;
+
+(******************************************************************************)
+(*******************************IMPORTACIONES**********************************)
+(******************************************************************************)
+
+FROM Contacto IMPORT Nombre, Tipo;
+
+FROM LNombres IMPORT LNombres;
+
+FROM LNat IMPORT LNat;
+
+FROM LDirecciones IMPORT Direccion;
+
+FROM LCorreos IMPORT Correo;
+
+FROM LTelefonos IMPORT Telefono;
+
+FROM LCelulares IMPORT Celular;
+
+FROM Contacto IMPORT Contacto;
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************************************************************)
+
+(*******************************LEER DIRECCION*********************************)
+PROCEDURE LeerDireccion():Direccion;
+
+(*******************************LEER TELEFONO**********************************)
+PROCEDURE LeerTelefono():Telefono;
+
+(********************************LEER CELULAR**********************************)
+PROCEDURE LeerCelular():Celular;
+
+(********************************LEER CORREO***********************************)
+PROCEDURE LeerCorreo():Correo;
+
+(********************************LEER NOMBRE***********************************)
+PROCEDURE LeerNombre():Nombre;
+
+(*****************************AGREGAR CONTACTO*********************************)
+PROCEDURE AgregarContacto(T:Tipo; VAR LN:LNombres);
+
+(****************************PERSISTIR CONTACTO********************************)
+PROCEDURE PersistirContacto(C:Contacto;j:CARDINAL);
+(*j es la posición de C en LN*)
+
+(****************************RECUPERAR CONTACTO********************************)
+PROCEDURE RecuperarContacto(i:CARDINAL):Contacto;
+(*i es la posicion de C en LN*)
+
+(*******************************VER CONTACTO***********************************)
+PROCEDURE VerContacto(C:Contacto);
+
+(*****************************LISTAR CONTACTOS*********************************)
+PROCEDURE ListarContactos(T:Tipo;LN:LNombres):LNat;
+
+(*****************************EDITAR CONTACTO**********************************)
+PROCEDURE EditarContacto(j:CARDINAL;VAR C:Contacto;LN:LNombres);
+(*j es la posición de C en LN*)
+
+(*****************************BORRAR CONTACTO**********************************)
+PROCEDURE BorrarContacto(j:CARDINAL;T:Tipo;VAR LN:LNombres);
+(*j es la posición de C en LN*)
+
+(******************************BUSCAR CONTACTO*********************************)
+PROCEDURE BuscarContacto(N:Nombre;T:Tipo;LN:LNombres):LNat;
+
+(****************************CAMBIAR CELULARES*********************************)
+PROCEDURE CambiarCelulares(LN:LNombres);
+
+(****************************CAMBIAR TELEFONOS*********************************)
+PROCEDURE CambiarTelefonos(LN:LNombres);
+
+END Procedimientos.

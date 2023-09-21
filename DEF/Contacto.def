@@ -1,0 +1,131 @@
+DEFINITION MODULE Contacto;
+
+(******************************************************************************)
+(*******************************IMPORTACIONES**********************************)
+(******************************************************************************)
+
+FROM LDirecciones IMPORT Direccion;
+
+FROM LCorreos IMPORT Correo;
+
+FROM LTelefonos IMPORT Telefono;
+
+FROM LCelulares IMPORT Celular;
+
+FROM IOChan IMPORT ChanId;
+
+(******************************************************************************)
+(***********************************TIPOS**************************************)
+(******************************************************************************)
+
+TYPE
+ Contacto;
+
+ Nombre = ARRAY [0..30] OF CHAR;
+
+ Tipo = (Negocios, Personal);
+
+ Campos = (Nombres, Address, Tel, Cel, Mail);
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************CONSTRUCTORES***********************************)
+(******************************************************************************)
+
+(******************************CREAR CONTACTO**********************************)
+PROCEDURE CrearContacto(N:Nombre):Contacto;
+(*Crea un contacto de nombre N, tipo T y campos vacíos*)
+
+(**************************EDITAR NOMBRE CONTACTO******************************)
+PROCEDURE EditarNombreContacto(N:Nombre; VAR C:Contacto);
+(*Se cambia el campo nombre del contacto C por el valor de la variable N*)
+
+(*************************EDITAR DIRECCION CONTACTO****************************)
+PROCEDURE EditarDireccionContacto(D:Direccion; i:CARDINAL; VAR C:Contacto);
+(*Se elimina la dirección i del contacto C, y se inserta C,
+  si no existe i, solo se inserta C*)
+
+(***************************EDITAR CORREO CONTACTO*****************************)
+PROCEDURE EditarCorreoContacto(Cor:Correo; i:CARDINAL; VAR C:Contacto);
+(*Se elimina el correo i del contacto C, y se inserta Cor,
+  si no existe i, solo se inserta Cor*)
+
+(**************************EDITAR TELEFONO CONTACTO****************************)
+PROCEDURE EditarTelefonoContacto(T:Telefono; i:CARDINAL; VAR C:Contacto);
+(*Se elimina el teléfono i del contacto C, y se inserta T,
+  si no existe i, solo se inserta T*)
+
+(**************************EDITAR CELULAR CONTACTO*****************************)
+PROCEDURE EditarCelularContacto(Cel:Celular; i:CARDINAL; VAR C:Contacto);
+(*Se elimina el celular i del contacto C, y se inserta Cel,
+  si no existe i, solo se inserta Cel*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************PREDICADOS************************************)
+(******************************************************************************)
+
+(**************************EXISTE CAMPO CONTACTO*******************************)
+PROCEDURE ExisteCampoContacto(Camp:Campos; i:CARDINAL; C:Contacto):BOOLEAN;
+(*Retorna TRUE si existe el elemento i del Campo Camp en el contacto C.*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************SELECTORES************************************)
+(******************************************************************************)
+
+(**************************OBTENER NOMBRE CONTACTO*****************************)
+PROCEDURE ObtenerNombreContacto(C:Contacto):Nombre;
+(*Retorna el nombre del contacto C*)
+
+(************************OBTENER DIRECCION CONTACTO****************************)
+PROCEDURE ObtenerDireccionContacto(i:CARDINAL; C:Contacto):Direccion;
+(*Retorna la direccion i del contacto C; debe existir i*)
+
+(*************************OBTENER CORREO CONTACTO******************************)
+PROCEDURE ObtenerCorreoContacto(i:CARDINAL; C:Contacto):Correo;
+(*Retorna el correo i del contacto C; debe existir i*)
+
+(************************OBTENER TELEFONO CONTACTO*****************************)
+PROCEDURE ObtenerTelefonoContacto(i:CARDINAL; C:Contacto):Telefono;
+(*Retorna el teléfono i del contacto C; debe existir i*)
+
+(*************************OBTENER CELULAR CONTACTO*****************************)
+PROCEDURE ObtenerCelularContacto(i:CARDINAL; C:Contacto):Celular;
+(*Retorna el celular i del contacto C; debe existir i*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************ENTRADA/SALIDA**********************************)
+(******************************************************************************)
+
+(*************************IMPRIMIR CAMPOS CONTACTO*****************************)
+PROCEDURE ImprimirCampoContacto(Cid:ChanId;Camp:Campos;C:Contacto);
+(*Imprime el campo Camp del contacto C en el canal Cid*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(*******************************DESTRUCTORES***********************************)
+(******************************************************************************)
+
+(************************DESTRUIR DIRECCION CONTACTO***************************)
+PROCEDURE DestruirDireccionContacto(i:CARDINAL; VAR C:Contacto);
+(*Destruye la direccion i del contacto C; debe existir i*)
+
+(*************************DESTRUIR CORREO CONTACTO*****************************)
+PROCEDURE DestruirCorreoContacto(i:CARDINAL; VAR C:Contacto);
+(*Destruye el correo i del contacto C; debe existir i*)
+
+(************************DESTRUIR TELEFONO CONTACTO****************************)
+PROCEDURE DestruirTelefonoContacto(i:CARDINAL; VAR C:Contacto);
+(*Destruye el teléfono i del contacto C; debe existir i*)
+
+(************************DESTRUIR CELULAR CONTACTO*****************************)
+PROCEDURE DestruirCelularContacto(i:CARDINAL; VAR C:Contacto);
+(*Destruye el celular i del contacto C; debe existir i*)
+
+(****************************DESTRUIR CONTACTO*********************************)
+PROCEDURE DestruirContacto(VAR C:Contacto);
+(*Destruye el contacto C*)
+
+END Contacto.

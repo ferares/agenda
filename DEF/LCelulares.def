@@ -1,0 +1,59 @@
+DEFINITION MODULE LCelulares;
+
+(******************************************************************************)
+(***********************************TIPOS**************************************)
+(******************************************************************************)
+
+TYPE
+ LCelulares;
+
+ Celular = RECORD
+  C : ARRAY [0..15] OF [0..9];
+  Largo : CARDINAL;
+ END;(*/RECORD*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************CONSTRUCTORES***********************************)
+(******************************************************************************)
+
+(*****************************CREAR LCELULARES*********************************)
+PROCEDURE CrearLCelulares():LCelulares;
+(*Crea la LCelulares vacía*)
+
+(**********************INSERTAR CELULAR LCELULARES*****************************)
+PROCEDURE InsertarCelularLCelulares(C:Celular;VAR LC:LCelulares);
+(*Inserta C al comienzo de LC*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************PREDICADOS************************************)
+(******************************************************************************)
+
+(*************************EXISTE CELULAR LCELULARES****************************)
+PROCEDURE ExisteCelularLCelulares(i:CARDINAL; LC:LCelulares): BOOLEAN;
+(*Retorna TRUE si existe el celular i en LC, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************SELECTORES************************************)
+(******************************************************************************)
+
+(************************OBTENER CELULAR LCELULARES****************************)
+PROCEDURE ObtenerCelularLCelulares(i:CARDINAL; LC:LCelulares): Celular;
+(*Retorna, si existe, el celular i de LC, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(*******************************DESTRUCTORES***********************************)
+(******************************************************************************)
+
+(************************DESTRUIR CELULAR LCELULARES***************************)
+PROCEDURE DestruirCelularLCelulares(i:CARDINAL; VAR LC:LCelulares);
+(*Destruye el celular i de LC, debe existir i, (Las posiciones inician en 0)*)
+
+(*****************************DESTRUIR LCELULARES******************************)
+PROCEDURE DestruirLCelulares(VAR LC:LCelulares);
+(*Destruye a LC*)
+
+END LCelulares.

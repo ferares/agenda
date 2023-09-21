@@ -1,0 +1,21 @@
+% XDS project file
+
+!module F:\Prog2\Agenda\Agenda.mod
+!module F:\Prog2\Agenda\DEF\Contacto.def
+!module F:\Prog2\Agenda\DEF\LCelulares.def
+!module F:\Prog2\Agenda\DEF\LCorreos.def
+!module F:\Prog2\Agenda\DEF\LDirecciones.def
+!module F:\Prog2\Agenda\DEF\LTelefonos.def
+!module F:\Prog2\Agenda\SRC\Contacto.mod
+!module F:\Prog2\Agenda\SRC\LCelulares.mod
+!module F:\Prog2\Agenda\SRC\LCorreos.mod
+!module F:\Prog2\Agenda\SRC\LDirecciones.mod
+!module F:\Prog2\Agenda\SRC\LTelefonos.mod
+!module F:\Prog2\Agenda\DEF\LNombres.def
+!module F:\Prog2\Agenda\SRC\LNombres.mod
+!module F:\Prog2\Agenda\SRC\Procedimientos.mod
+!module F:\Prog2\Agenda\DEF\Procedimientos.def
+!module F:\Prog2\Agenda\DEF\LNat.def
+!module F:\Prog2\Agenda\SRC\LNat.mod
+!module F:\Prog2\Agenda\DEF\ABBNombres.def
+!module F:\Prog2\Agenda\SRC\ABBNombres.mod

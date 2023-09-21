@@ -1,0 +1,59 @@
+DEFINITION MODULE LTelefonos;
+
+(******************************************************************************)
+(***********************************TIPOS**************************************)
+(******************************************************************************)
+
+TYPE
+ LTelefonos;
+
+ Telefono = RECORD
+  T : ARRAY [0..15] OF [0..9];
+  Largo : CARDINAL;
+ END;(*/RECORD*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************CONSTRUCTORES***********************************)
+(******************************************************************************)
+
+(*****************************CREAR LTELEFONOS*********************************)
+PROCEDURE CrearLTelefonos():LTelefonos;
+(*Crea la LTelefonos vacía*)
+
+(**********************INSERTAR TELEFONO LTELEFONOS****************************)
+PROCEDURE InsertarTelefonoLTelefonos(T:Telefono;VAR LT:LTelefonos);
+(*Inserta T al comienzo de LT*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************PREDICADOS************************************)
+(******************************************************************************)
+
+(*************************EXISTE TELEFONO LTELEFONOS***************************)
+PROCEDURE ExisteTelefonoLTelefonos(i:CARDINAL; LT:LTelefonos): BOOLEAN;
+(*Retorna TRUE si existe el teléfono i en LT, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************SELECTORES************************************)
+(******************************************************************************)
+
+(************************OBTENER TELEFONO LTELEFONOS***************************)
+PROCEDURE ObtenerTelefonoLTelefonos(i:CARDINAL; LT:LTelefonos): Telefono;
+(*Retorna, si existe, el teléfono i de LT, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(*******************************DESTRUCTORES***********************************)
+(******************************************************************************)
+
+(************************DESTRUIR TELEFONO LTELEFONOS**************************)
+PROCEDURE DestruirTelefonoLTelefonos(i:CARDINAL; VAR LT:LTelefonos);
+(*Destruye el teléfono i de LT, debe existir i, (Las posiciones inician en 0)*)
+
+(*****************************DESTRUIR LTELEFONOS******************************)
+PROCEDURE DestruirLTelefonos(VAR LT:LTelefonos);
+(*Destruye a LT*)
+
+END LTelefonos.

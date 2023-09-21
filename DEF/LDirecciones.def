@@ -1,0 +1,56 @@
+DEFINITION MODULE LDirecciones;
+
+(******************************************************************************)
+(***********************************TIPOS**************************************)
+(******************************************************************************)
+
+TYPE
+ LDirecciones;
+
+ Direccion = ARRAY [0..50] OF CHAR;
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************CONSTRUCTORES***********************************)
+(******************************************************************************)
+
+(****************************CREAR LDIRECCIONES********************************)
+PROCEDURE CrearLDirecciones():LDirecciones;
+(*Crea la LDirecciones vacía*)
+
+(*********************INSERTAR DIRECCION LDIRECCIONES**************************)
+PROCEDURE InsertarDireccionLDirecciones(D:Direccion;VAR LD:LDirecciones);
+(*Inserta D al comienzo de LD*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************PREDICADOS************************************)
+(******************************************************************************)
+
+(***********************EXISTE DIRECCION LDIRECCIONES**************************)
+PROCEDURE ExisteDireccionLDirecciones(i:CARDINAL;LD:LDirecciones): BOOLEAN;
+(*Retorna TRUE si existe la dirección i en LD, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************SELECTORES************************************)
+(******************************************************************************)
+
+(**********************OBTENER DIRECCION LDIRECCIONES**************************)
+PROCEDURE ObtenerDireccionLDirecciones(i:CARDINAL; LD:LDirecciones): Direccion;
+(*Retorna, si existe, la dirección i de LD, (Las posiciones inician en 0)*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(*******************************DESTRUCTORES***********************************)
+(******************************************************************************)
+
+(**********************DESTRUIR DIRECCION LDIRECCIONES*************************)
+PROCEDURE DestruirDireccionLDirecciones(i:CARDINAL; VAR LD:LDirecciones);
+(*Destruye la dirección i de LD, debe existir i, (Las posiciones inician en 0)*)
+
+(****************************DESTRUIR LDIRECCIONES*****************************)
+PROCEDURE DestruirLDirecciones(VAR LD:LDirecciones);
+(*Destruye a LD*)
+
+END LDirecciones.

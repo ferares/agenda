@@ -1,0 +1,89 @@
+DEFINITION MODULE LNombres;
+
+(******************************************************************************)
+(*******************************IMPORTACIONES**********************************)
+(******************************************************************************)
+
+FROM Contacto IMPORT Nombre, Tipo;
+
+FROM IOChan IMPORT ChanId;
+
+FROM LNat IMPORT LNat;
+
+(******************************************************************************)
+(***********************************TIPOS**************************************)
+(******************************************************************************)
+
+TYPE
+ LNombres;
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************CONSTRUCTORES***********************************)
+(******************************************************************************)
+
+(******************************CREAR LNOMBRES**********************************)
+PROCEDURE CrearLNombres():LNombres;
+(*Crea la LNombres vacía*)
+
+(************************INSERTAR NOMBRE LNOMBRES******************************)
+PROCEDURE InsertarNombreLNombres(N:Nombre;T:Tipo;VAR LN:LNombres):CARDINAL;
+(*Inserta N en LN, y devuelve su posición en LN*)
+
+(*************************EDITAR NOMBRE LNOMBRES*******************************)
+PROCEDURE EditarNombreLNombres(N:Nombre;P:CARDINAL;VAR LN:LNombres);
+(*Cambia el nombre de la posicion P por N*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************PREDICADOS************************************)
+(******************************************************************************)
+
+(************************PERTENECE NOMBRE LNOMBRES*****************************)
+PROCEDURE PerteneceNombreLNombres(P:CARDINAL;T:Tipo;LN:LNombres):BOOLEAN;
+(*Retorna TRUE si y solo si, existe en LN la posición P*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(********************************SELECTORES************************************)
+(******************************************************************************)
+
+(********************OBTENER COINCIDENCIAS NOMBRE LNOMBRES*********************)
+PROCEDURE ObtenerCoincidenciasNombreLNombres(N:Nombre;T:Tipo;LN:LNombres):LNat;
+(*Retorna las posiciones de todos los nombres que contienen a N en LN*)
+
+(**************************OBTENER NOMBRE LNOMBRES*****************************)
+PROCEDURE ObtenerNombreLNombres(P:CARDINAL;T:Tipo;LN:LNombres):Nombre;
+(*Si existe en LN, retorna el nombre de posición P*)
+
+(************************OBTENER POSICIONES LNOMBRES***************************)
+PROCEDURE ObtenerPosicionesLNombres(T:Tipo;LN:LNombres):LNat;
+(*Retorna una lista con todos las posiciones de los nombres del tipo T*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(******************************ENTRADA/SALIDA**********************************)
+(******************************************************************************)
+
+(****************************PERSISTIR LNOMBRES********************************)
+PROCEDURE PersistirLNombres(Cid:ChanId;LN:LNombres);
+(*Persiste LN en el archivo Cid*)
+
+(****************************RECUPERAR LNOMBRES********************************)
+PROCEDURE RecuperarLNombres(Chan:ChanId;VAR LN:LNombres);
+(*Recupera LN con el archivo Chan*)
+
+(******************************************************************************)
+(******************************PROCEDIMIENTOS**********************************)
+(*******************************DESTRUCTORES***********************************)
+(******************************************************************************)
+
+(*************************DESTRUIR NOMBRE LNOMBRES*****************************)
+PROCEDURE DestruirNombreLNombres(P:CARDINAL;T:Tipo;VAR LN:LNombres);
+(*Destruye al contacto de la posicion P y tipo T, debe existir dicho contacto*)
+
+(****************************DESTRUIR LNOMBRES*********************************)
+PROCEDURE DestruirLNombres(VAR LN:LNombres);
+(*Destruye a LN*)
+
+END LNombres.
